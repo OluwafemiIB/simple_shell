@@ -1,3 +1,4 @@
+
 #include "shell.h"
 
 /**
@@ -8,7 +9,7 @@
 int interactive(info_t *info)
 {
 	return (isatty(STDIN_FILENO) && info->readfd <= 2);
-	/* information is known */
+	/* information is being read */
 }
 
 /**
@@ -52,13 +53,13 @@ int _atoi(char *s)
 	unsigned int result = 0;
 
 	for (i = 0;  s[i] != '\0' && flag != 2; i++)
-		/* to get the unsigned result */
+		/* to get the unsigned result of the character string */
 	{
 		if (s[i] == '-')
 			sign *= -1;
 
 		if (s[i] >= '0' && s[i] <= '9')
-			/* checks for flags to be converted */
+			/* checks for flags to be converted from int */
 		{
 			flag = 1;
 			result *= 10;
